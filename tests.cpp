@@ -4,38 +4,35 @@
 #include "catch.hpp"
 #include "main.hpp"
 // tests for exercise 1
-TEST_CASE("Ex1 finduserstring()", "[example]")
+TEST_CASE("Ex1 strlen()", "[example]")
 {
-	int cstrlen, userlen, position;
-	char cstr[] = "Chocolate";
-	char userstr[100];
+	int srclen, tgtlen;
+	char source[100] = "Chocolate\0";
+	char target[100];
 
-	cstrlen = strlen(cstr);
-	userstr[0] = 'c';
-	userstr[1] = 'o';
-	userstr[2] = 'l';
-	userstr[3] = '\0';
-	userlen = strlen(userstr);
+	srclen = mycstrlen(source);
+	cout << "The length of source string " << srclen << endl;
+	REQUIRE(srclen == 9);
 
-	position = finduserstring(cstr, cstrlen, userstr, userlen);
+	mycstrcpy(source, target);
+	tgtlen = mycstrlen(target);
+	cout << "The length of target string " << tgtlen << endl;
+	cout << "The Target String is " << target << endl;
 	cout << "****************************************\n";
-	REQUIRE(position == 3);
+	REQUIRE(tgtlen == 9);
+
+	REQUIRE(strcmp(target, "Chocolate") == 0);
 }
+
 // tests for exercise 2
-TEST_CASE("Ex2 finduserstring()", "[example]")
+TEST_CASE("Ex2 strcat()", "[example]")
 {
-	int cstrlen, userlen, position;
-	char cstr[] = "C++ Programming";
-	char userstr[100];
-
-	cstrlen = strlen(cstr);
-	userstr[0] = 'r';
-	userstr[1] = 'a';
-	userstr[2] = 'm';
-	userstr[3] = '\0';
-	userlen = strlen(userstr);
-
-	position = finduserstring(cstr, cstrlen, userstr, userlen);
-	cout << "****************************************\n";
-	REQUIRE(position == 8);
+	int srclen;
+	char source[100] = "Chocolate\0";
+	char target[100] = "Chips";
+	srclen = mycstrcat(source, target);
+	cout << "The length of source string " << srclen << endl;
+	cout << "The Concatenated String is " << source << endl;
+	REQUIRE(srclen == strlen(source));
+	REQUIRE(strcmp(source, "ChocolateChips") == 0);
 }

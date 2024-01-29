@@ -4,11 +4,31 @@
 #include <cstring>
 using namespace std;
 
-int finduserstring(char[], int, char[], int);
+int mycstrlen(char[]);
+int mycstrcpy(char[], char[]);
+int mycstrcat(char[], char[]);
 
-int finduserstring(char cstr[], int cstrlen, char userstr[], int userlen)
+int mycstrlen(char src[])
 {
-	/*
-	Make your code
-	*/
+	/***************************************************
+	 * Do not use string class type
+	 * Use onlye character array type
+	 * Code your program here
+	 ***************************************************/
+}
+int mycstrcpy(char src[], char target[])
+{
+	/***************************************************
+	 * Do not use string class type
+	 * Use onlye character array type
+	 * Code your program here
+	 ***************************************************/
+}
+int mycstrcat(char src[], char target[])
+{
+	/***************************************************
+	 * Do not use string class type
+	 * Use onlye character array type
+	 * Code your program here
+	 ***************************************************/
 }

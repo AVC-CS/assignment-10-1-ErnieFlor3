@@ -2,17 +2,17 @@
 
 int main()
 {
-	int cstrlen, userlen, position;
-	char cstr[] = "Chocolate";
-	char userstr[100];
+	int srclen, tgtlen;
+	char source[100] = "Chocolate\0";
+	char target[100];
 
-	cstrlen = strlen(cstr);
-	cin >> userstr;
-	userlen = strlen(userstr);
-
-	position = finduserstring(cstr, cstrlen, userstr, userlen);
-	if (position != -1)
-		cout << "Found your string at : " << position << endl;
-	else
-		cout << "Not found\n";
+	srclen = mycstrlen(source);
+	cout << "The length of source string " << srclen << endl;
+	mycstrcpy(source, target);
+	tgtlen = mycstrlen(target);
+	cout << "The length of target string " << tgtlen << endl;
+	cout << "The Target String is " << target << endl;
+	srclen = mycstrcat(source, target);
+	cout << "The length of source string " << srclen << endl;
+	cout << "The Concatenated String is " << source << endl;
 }
